@@ -16,8 +16,11 @@
     pip install gprof2dot
     sudo apt install graphviz
 
-[Aquí iría una imagen mostrando la instalación de todas las herramientas necesarias]
+![Captura de pantalla 2025-03-29 104226](https://github.com/user-attachments/assets/25d792cc-923d-47cd-86b5-754e8826b6b2)
 
+![Captura de pantalla 2025-03-29 104257](https://github.com/user-attachments/assets/a3012b4a-c9f1-490f-8d0d-51ae04b86462)
+
+![Captura de pantalla 2025-03-29 104400](https://github.com/user-attachments/assets/fe28285f-50d4-4eff-b010-d82a01080cc1)
 
 ## Parte 1: Profiling con GPROF
 
@@ -59,15 +62,12 @@ void new_func1(void) {
     for (int i = 0; i < 0xffffffee; i++);
 }
 ```
-
-[Aquí iría una foto mostrando los archivos creados en el explorador de archivos o terminal]
+![Captura de pantalla 2025-03-29 104904](https://github.com/user-attachments/assets/d1be9d4b-8cd6-46b3-b289-0152d4d5fe73)
 
 ### Compilación con soporte de profiling
 - [ ] Compilar usando:
 
     gcc -Wall -pg test_gprof.c test_gprof_new.c -o test_gprof
-
-[Aquí iría una foto mostrando el comando ejecutado y el binario generado]
 
 ### Ejecución del programa
 - [ ] Ejecutar:
@@ -76,7 +76,7 @@ void new_func1(void) {
 
   Esto generará `gmon.out`.
 
-[Aquí iría una foto mostrando la ejecución del programa y el archivo `gmon.out` generado]
+![Captura de pantalla 2025-03-29 105017](https://github.com/user-attachments/assets/63953e0e-bd1d-4072-adc7-e9e8213ebc7b)
 
 ### Generar análisis de perfil
 - [ ] Ejecutar:
@@ -87,7 +87,10 @@ void new_func1(void) {
   - [ ] Flat profile
   - [ ] Call graph
 
-[Aquí iría una captura del contenido de `analysis.txt` en un editor de texto o en terminal]
+
+![Captura de pantalla 2025-03-29 105115](https://github.com/user-attachments/assets/96752b56-aee5-487d-bae8-f31044b11298)
+
+![Captura de pantalla 2025-03-29 105140](https://github.com/user-attachments/assets/f872b744-7eb1-40d0-83f4-ff3e0603b994)
 
 ### Personalización del análisis con flags (ejecutar cada uno y analizar)
 - [ ] `gprof -a test_gprof gmon.out > analysis.txt`  
@@ -103,7 +106,13 @@ void new_func1(void) {
 - [ ] `gprof -pfunc1 -b test_gprof gmon.out > analysis.txt`  
   - Muestra solo datos de `func1`
 
-[Aquí iría una imagen comparativa entre varios `analysis.txt` generados con flags distintos]
+![Captura de pantalla 2025-03-29 105925](https://github.com/user-attachments/assets/711e0f3c-b7d4-4d1d-96e6-fb1d09d140ee)
+
+![Captura de pantalla 2025-03-29 110002](https://github.com/user-attachments/assets/ff8c1f6c-7523-46c9-b040-8cdc08ab4ee8)
+
+![Captura de pantalla 2025-03-29 110046](https://github.com/user-attachments/assets/2a958f69-2243-4edc-9ce0-7e860e4e7dcb)
+
+![Captura de pantalla 2025-03-29 110150](https://github.com/user-attachments/assets/748b5ef4-a3dc-4d00-8438-5b90784525a9)
 
 ### Visualización con gprof2dot
 - [ ] Instalar herramientas necesarias:
@@ -118,7 +127,9 @@ void new_func1(void) {
 
 - [ ] Verificar que se generó `output.png`
 
-[Aquí iría una foto del gráfico generado con nodos y flechas representando las llamadas]
+![Captura de pantalla 2025-03-29 110239](https://github.com/user-attachments/assets/1b6a816f-ac19-473e-ab40-175d667389d7)
+
+![Captura de pantalla 2025-03-29 110411](https://github.com/user-attachments/assets/46b7500f-2e39-4175-af24-975556afb293)
 
 ## Parte 2: Profiling con `perf`
 
@@ -132,7 +143,7 @@ void new_func1(void) {
 
     sudo perf report
 
-[Aquí iría una captura del reporte interactivo mostrando funciones más costosas]
+![Captura de pantalla 2025-03-29 110548](https://github.com/user-attachments/assets/fb36f01b-c1c3-4f19-8244-d45cfa515e0f)
 
 ## Limpieza opcional
 - [ ] Eliminar archivos generados si se desea:
@@ -147,5 +158,5 @@ void new_func1(void) {
   - [ ] Visualización con `gprof2dot`
   - [ ] Análisis básico con `perf`
 
-[Aquí iría una imagen final mostrando una carpeta limpia y los resultados esperados]
+![Captura de pantalla 2025-03-29 110648](https://github.com/user-attachments/assets/8c9bd661-1b9e-46b1-9a6a-becc776039ca)
 
